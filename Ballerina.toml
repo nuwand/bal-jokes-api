@@ -1,0 +1,8 @@
+[package]
+org = "nuwan"
+name = "bal_jokes_api"
+version = "0.1.0"
+distribution = "2201.3.4"
+
+[build-options]
+observabilityIncluded = true
