@@ -17,7 +17,7 @@ service / on new http:Listener(9090) {
 
         http:Client jokeClient = check new ("https://v2.jokeapi.dev/joke/");
 
-        string joke = check jokeClient->/[JOKE_TYPE];
+        string joke = check jokeClient->/[JOKE_TYPE](blacklistFlags="nsfw,religious");
         // Send a response back to the caller.
         if joke is "" {
             return error("Could not fetch Joke at this time");
